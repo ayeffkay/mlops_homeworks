@@ -15,9 +15,10 @@ $$F_{\beta} = \left(1 + \beta^2\right)\dfrac{Precision \cdot Recall}{\beta^2\cdo
 
 Однако данную метрику сложно интерпретировать для бизнеса, поэтому для заказчика предлагается использовать метрику:
 $$
-\textrm{profit\_per\_month} = \sum_{i=1}^{\left|fraud\_transactions\right|} \Big\{ TP_i \cdot & \left(customer\_churn\_damage_i + transaction\_amount_i\right) 
- - FN_i \cdot & \left(customer\_churn\_damage_i + transaction\_amount_i\right) 
- - FP_i \cdot & customer\_churn\_damage_i \Big\}
+profit\_per\_month = \sum_{i=1}^{\left|fraud_transactions\right|} \Big[ TP_i \cdot \left(customer\_churn\_damage_i + transaction\_amount_i\right)
+- FN_i \cdot \left(customer\_churn\_damage_i + transaction\_amount_i\right)
+- FP_i \cdot customer\_churn\_damage_i 
+\Big]
 $$
 Здесь $TP_i$, $FN_i$, $FP_i$ - бинарные переменные, показывающие определила ли система мошенническую транзакцию, ложноотрицательное и ложноположительное срабатывания. $`\left|fraud\_transactions\right|`$ - количество мошеннических транзакций за месяц, $`transaction\_amount_i`$ - сумма транзакции, $`customer\_churn\_damage_i`$ - мат. ожидание убытка от пропуска транзакции для заданного клиента. В случае ошибки $FN_i$ клиент не обязательно откажется от услуг компании, но компания может понести репутационные издержки, соответственно при обнаружении мошеннической транзакции доверие повышается. Поэтому помимо явной прибыли/убытка $`transaction\_amount_i`$, как в случае $TP_i$, так и в случае $FN_i$ учитывается неявная прибыль/убыток (н.р., клиент может оставить плохой отзыв о компании, или, наоборот, порекомендовать компанию и обеспечить приток новых клиентов). $`customer\_churn\_damage_i`$ может зависеть от многих факторов и лучше конкретизировать вычисление этой величины в зависимости от данных и согласования с заказчиком.
 
