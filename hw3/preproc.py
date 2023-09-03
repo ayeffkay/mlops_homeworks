@@ -15,7 +15,6 @@ findspark.find()
 from pyspark.sql import SparkSession, SQLContext
 from pyspark.sql.functions import floor
 from pyspark.sql.types import (
-    BooleanType,
     LongType,
     TimestampType,
     DecimalType,
@@ -33,7 +32,7 @@ SCHEMA = (
     .add("tx_amount", DecimalType(precision=10, scale=2), True)
     .add("tx_time_seconds", IntegerType(), True)
     .add("tx_time_days", IntegerType(), True)
-    .add("tx_fraud", BooleanType(), True)
+    .add("tx_fraud", IntegerType(), True)
     .add("tx_fraud_scenario", ShortType(), True)
 )
 
