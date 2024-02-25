@@ -1,0 +1,1 @@
+/opt/airflow/bin/yc dataproc cluster delete dataproc9df501bd
