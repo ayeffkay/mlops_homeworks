@@ -56,9 +56,9 @@
 Чтобы все операторы видели IP-адрес мастерноды, он передаётся через xcom и все операторы, которым нужен IP, обёрнуты в PythonOperator. Для экономии времени и ресурсов запуск осуществлялся на небольшом бакете, содержащем один файл из датасета и DAG перезапускался каждые 3 часа.
 
 Скрины успешных запусков
-[dag_report](images/dags_report.png)
-[three_dag_runs](images/three_dag_runs.png)
-[dag_view](images/dag_view.png)
+![dag_report](images/dags_report.png)
+![three_dag_runs](images/three_dag_runs.png)
+![dag_view](images/dag_view.png)
 
 ## Удаление виртуалки с Airflow
 
