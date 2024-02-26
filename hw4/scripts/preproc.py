@@ -14,14 +14,8 @@ findspark.find()
 
 from pyspark.sql import SparkSession, SQLContext
 from pyspark.sql.functions import floor
-from pyspark.sql.types import (
-    LongType,
-    TimestampType,
-    DecimalType,
-    IntegerType,
-    ShortType,
-    StructType,
-)
+from pyspark.sql.types import (DecimalType, IntegerType, LongType, ShortType,
+                               StructType, TimestampType)
 
 SCHEMA = (
     StructType()
